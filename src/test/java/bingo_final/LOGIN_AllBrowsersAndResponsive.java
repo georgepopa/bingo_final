@@ -40,7 +40,9 @@ public class LOGIN_AllBrowsersAndResponsive extends TestCase {
 	public final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
 	public LOGIN_AllBrowsersAndResponsive(String name) {
 		super(name);
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\adriana-tst\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		String path = getClass().getClassLoader().getResource("chromedriver.exe"
+				).getFile();
+		System.setProperty("webdriver.chrome.driver", path);
 		System.setProperty("webdriver.ie.driver", "C:\\Users\\adriana-tst\\Downloads\\IEDriverServer_x64_2.53.0\\IEDriverServer.exe");
 	}
 
